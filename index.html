@@ -1,0 +1,383 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>KEKA | Portfólio</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+<style>
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Poppins',sans-serif;
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
+body{
+    background:#050505;
+    color:white;
+    overflow-x:hidden;
+}
+
+/* FUNDO PREMIUM */
+body::before{
+    content:'';
+    position:fixed;
+    inset:0;
+    background:
+    radial-gradient(circle at top left,#ff000055,transparent 35%),
+    radial-gradient(circle at center,#7a000033,transparent 45%),
+    radial-gradient(circle at bottom right,#ff1a1a44,transparent 35%);
+    z-index:-2;
+}
+
+body::after{
+    content:'';
+    position:fixed;
+    inset:0;
+    background:
+    linear-gradient(rgba(255,255,255,.02) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255,255,255,.02) 1px, transparent 1px);
+    background-size:40px 40px;
+    z-index:-1;
+}
+
+/* HEADER */
+header{
+    position:fixed;
+    top:0;
+    width:100%;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    padding:20px 10%;
+    backdrop-filter:blur(15px);
+    background:rgba(0,0,0,.4);
+    border-bottom:1px solid rgba(255,0,0,.15);
+    z-index:1000;
+}
+
+.logo{
+    font-size:2rem;
+    font-weight:800;
+    color:#ff2b2b;
+    text-shadow:0 0 20px #ff2b2b;
+}
+
+nav a{
+    color:white;
+    text-decoration:none;
+    margin-left:25px;
+    transition:.3s;
+}
+
+nav a:hover{
+    color:#ff2b2b;
+}
+
+/* HERO */
+.hero{
+    min-height:100vh;
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    align-items:center;
+    text-align:center;
+    padding:120px 20px 60px;
+}
+
+.hero h1{
+    font-size:6rem;
+    font-weight:800;
+    background:linear-gradient(90deg,#ff0000,#ff4d4d,#ffffff);
+    -webkit-background-clip:text;
+    -webkit-text-fill-color:transparent;
+}
+
+.hero p{
+    max-width:800px;
+    margin-top:20px;
+    color:#ddd;
+    line-height:1.8;
+}
+
+/* BOTÕES */
+.botoes{
+    display:flex;
+    gap:15px;
+    flex-wrap:wrap;
+    justify-content:center;
+    margin-top:40px;
+}
+
+.btn{
+    padding:16px 40px;
+    border-radius:50px;
+    text-decoration:none;
+    font-weight:700;
+    color:white;
+    background:#ff1a1a;
+    transition:.3s;
+}
+
+.btn:hover{
+    transform:translateY(-5px);
+    box-shadow:0 0 35px #ff1a1a;
+}
+
+.btn-secundario{
+    padding:16px 40px;
+    border-radius:50px;
+    text-decoration:none;
+    font-weight:700;
+    color:white;
+    border:1px solid #ff1a1a;
+    transition:.3s;
+}
+
+.btn-secundario:hover{
+    background:#ff1a1a;
+    box-shadow:0 0 25px #ff1a1a;
+}
+
+/* STATS */
+.stats{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(200px,1fr));
+    gap:20px;
+    padding:80px 10%;
+    text-align:center;
+}
+
+.stat h2{
+    font-size:2.5rem;
+    color:#ff2b2b;
+}
+
+/* SEÇÕES */
+.section{
+    padding:100px 10%;
+    text-align:center;
+}
+
+.section h2{
+    font-size:3rem;
+    margin-bottom:50px;
+}
+
+/* CARDS */
+.cards{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+    gap:25px;
+}
+
+.card{
+    background:rgba(255,255,255,.04);
+    border:1px solid rgba(255,0,0,.15);
+    border-radius:20px;
+    padding:30px;
+    transition:.3s;
+}
+
+.card:hover{
+    transform:translateY(-10px);
+    border-color:#ff1a1a;
+}
+
+/* GALERIA */
+.galeria{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(200px,1fr));
+    gap:15px;
+}
+
+.galeria div{
+    height:200px;
+    background:linear-gradient(45deg,#ff0000,#111);
+    border-radius:15px;
+}
+
+/* FAQ */
+details{
+    background:rgba(255,255,255,.04);
+    padding:20px;
+    border-radius:10px;
+    margin-bottom:10px;
+    cursor:pointer;
+}
+
+/* CTA */
+.cta{
+    padding:120px 10%;
+    text-align:center;
+}
+
+.cta h2{
+    font-size:3rem;
+    margin-bottom:20px;
+}
+
+/* FOOTER */
+footer{
+    text-align:center;
+    padding:40px;
+    border-top:1px solid rgba(255,0,0,.15);
+    color:#999;
+}
+
+@media(max-width:768px){
+    .hero h1{font-size:3.5rem;}
+    nav{display:none;}
+}
+
+</style>
+
+</head>
+
+<body>
+
+<header>
+    <div class="logo">KEKA</div>
+    <nav>
+        <a href="#servicos">Serviços</a>
+        <a href="#portfolio">Portfólio</a>
+        <a href="#contato">Contato</a>
+    </nav>
+</header>
+
+<section class="hero">
+
+<h1>KEKA</h1>
+
+<p>
+Elegância, presença e autenticidade.
+Um portfólio moderno com foco em imagem, estilo e conexão.
+</p>
+
+<div class="botoes">
+
+<a class="btn" href="https://t.me/ericaverificada" target="_blank">
+Contato
+</a>
+
+<a class="btn-secundario" href="https://t.me/cornosliberais" target="_blank">
+Comunidade
+</a>
+
+</div>
+
+</section>
+
+<section class="stats">
+
+<div class="stat">
+<h2>100K+</h2>
+<p>Alcance</p>
+</div>
+
+<div class="stat">
+<h2>500+</h2>
+<p>Interações</p>
+</div>
+
+<div class="stat">
+<h2>24h</h2>
+<p>Disponível</p>
+</div>
+
+<div class="stat">
+<h2>VIP</h2>
+<p>Comunidade</p>
+</div>
+
+</section>
+
+<section class="section" id="servicos">
+
+<h2>Diferenciais</h2>
+
+<div class="cards">
+
+<div class="card">
+<h3>Qualidade</h3>
+<p>Conteúdo e presença bem trabalhados.</p>
+</div>
+
+<div class="card">
+<h3>Exclusividade</h3>
+<p>Experiência diferenciada e única.</p>
+</div>
+
+<div class="card">
+<h3>Agilidade</h3>
+<p>Resposta rápida e direta.</p>
+</div>
+
+</div>
+
+</section>
+
+<section class="section" id="portfolio">
+
+<h2>Portfólio</h2>
+
+<div class="galeria">
+<div></div><div></div><div></div><div></div>
+</div>
+
+</section>
+
+<section class="section">
+
+<h2>Perguntas Frequentes</h2>
+
+<details>
+<summary>Como entrar em contato?</summary>
+<p>Pelos botões do Telegram no site.</p>
+</details>
+
+<details>
+<summary>Existe comunidade?</summary>
+<p>Sim, acessível pelo botão "Comunidade".</p>
+</details>
+
+<details>
+<summary>É atualizado?</summary>
+<p>Sim, constantemente atualizado.</p>
+</details>
+
+</section>
+
+<section class="cta" id="contato">
+
+<h2>Entre em contato agora</h2>
+
+<div class="botoes">
+
+<a class="btn" href="https://t.me/ericaverificada" target="_blank">
+Falar Agora
+</a>
+
+<a class="btn-secundario" href="https://t.me/cornosliberais" target="_blank">
+Entrar na Comunidade
+</a>
+
+</div>
+
+</section>n
+
+<footer>
+© 2026 KEKA • Todos os direitos reservado
+</footer>
+
+</body>
+</html>
